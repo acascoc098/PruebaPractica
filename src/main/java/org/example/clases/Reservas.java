@@ -1,5 +1,6 @@
 package org.example.clases;
 
+import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -10,7 +11,7 @@ import javax.xml.bind.annotation.XmlRootElement;
 
 @XmlRootElement(name = "reservas")
 @XmlAccessorType (XmlAccessType.FIELD)
-public class Reservas {
+public class Reservas implements Serializable {
     @XmlElement(name="reserva")
     private List<Reserva> reservas;
 

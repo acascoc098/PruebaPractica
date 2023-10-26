@@ -1,5 +1,7 @@
 package org.example.clases;
 
+import java.io.Serializable;
+
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlRootElement;
@@ -11,7 +13,7 @@ import javax.xml.bind.annotation.XmlElement;
  */
 @XmlRootElement(name = "reserva")
 @XmlAccessorType (XmlAccessType.FIELD)
-public class Reserva {
+public class Reserva implements Serializable{
 
     private int numreserva;
     private String fechaentrada;

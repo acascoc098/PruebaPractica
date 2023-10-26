@@ -1,10 +1,12 @@
 package org.example.clases;
 
+import java.io.Serializable;
+
 /**
  * Clase del Código Postal
  * @author acascoc098 Andrea Castilla Cocera
  */
-public class CodigoPostal {
+public class CodigoPostal implements Serializable {
     private int codigo;
     private String ciudad;
 

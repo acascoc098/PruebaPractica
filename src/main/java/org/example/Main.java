@@ -76,6 +76,7 @@ public class Main {
             System.out.println("Se han serializado las reservas en el archivo " + archivo);
         } catch (IOException e) {
             System.err.println("Error al serializar los datos: " + e.getMessage());
+            e.printStackTrace();
         }
     }
 

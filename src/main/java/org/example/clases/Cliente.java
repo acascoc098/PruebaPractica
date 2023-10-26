@@ -5,7 +5,7 @@ import java.io.*;
  * Clase Cliente
  * @author acascoc098 Andrea Castilla Cocera
  */
-public class Cliente {
+public class Cliente implements Serializable {
     private String nombre;
     private String apellidos;
     private Direccion direccion;

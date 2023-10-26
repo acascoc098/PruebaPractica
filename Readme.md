@@ -14,7 +14,7 @@ Veamos que clases hemos creado:
  * Clase Cliente
  * @author acascoc098 Andrea Castilla Cocera
  */
-public class Cliente {
+public class Cliente implements Serializable {
     private String nombre;
     private String apellidos;
     private Direccion direccion;
@@ -24,7 +24,7 @@ public class Cliente {
 ### CodigoPostal
 
 ```java
-public class CodigoPostal {
+public class CodigoPostal implements Serializable {
     private int codigo;
     private String ciudad;
 ```
@@ -32,7 +32,7 @@ public class CodigoPostal {
 ### Direccion
 
 ```java
-public class Direccion {
+public class Direccion implements Serializable {
     private String tipovia;
     private String denominacion;
     private CodigoPostal codpos;
@@ -53,7 +53,7 @@ public class Factura {
 ### Reserva
 
 ```java
-public class Reserva {
+public class Reserva implements Serializable {
 
     private int numreserva;
     private String fechaentrada;
@@ -65,6 +65,8 @@ public class Reserva {
 ### Reservas
 
 ```java
+public class Reservas implements Serializable {
+    @XmlElement(name="reserva")
     private List<Reserva> reservas;
 ```
 

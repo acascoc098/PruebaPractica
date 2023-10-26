@@ -1,10 +1,12 @@
 package org.example.clases;
 
+import java.io.Serializable;
+
 /**
  * Clase Direccion
  * @author acascoc098 Andrea Castilla Cocera
  */
-public class Direccion {
+public class Direccion implements Serializable {
     private String tipovia;
     private String denominacion;
     private CodigoPostal codpos;
