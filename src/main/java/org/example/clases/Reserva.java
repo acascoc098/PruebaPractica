@@ -5,12 +5,12 @@ import java.util.Date;
 
 public class Reserva {
     private int numreserva;
-    private Date fechaentrada;
-    private Date fechasalida;
+    private String fechaentrada;
+    private String fechasalida;
     private String horaentrada;
 
-    public Reserva(int numreserva, Date fechaentrada,
-                   Date fechasalida, String horaentrada) {
+    public Reserva(int numreserva, String fechaentrada,
+                   String fechasalida, String horaentrada) {
         this.numreserva = numreserva;
         this.fechaentrada = fechaentrada;
         this.fechasalida = fechasalida;
@@ -25,19 +25,19 @@ public class Reserva {
         this.numreserva = numreserva;
     }
 
-    public Date getFechaentrada() {
+    public String getFechaentrada() {
         return fechaentrada;
     }
 
-    public void setFechaentrada(Date fechaentrada) {
+    public void setFechaentrada(String fechaentrada) {
         this.fechaentrada = fechaentrada;
     }
 
-    public Date getFechasalida() {
+    public String getFechasalida() {
         return fechasalida;
     }
 
-    public void setFechasalida(Date fechasalida) {
+    public void setFechasalida(String fechasalida) {
         this.fechasalida = fechasalida;
     }
 
@@ -47,5 +47,15 @@ public class Reserva {
 
     public void setHoraentrada(String horaentrada) {
         this.horaentrada = horaentrada;
+    }
+
+    @Override
+    public String toString() {
+        return "Reserva{" +
+                "numreserva=" + numreserva +
+                ", fechaentrada='" + fechaentrada + '\'' +
+                ", fechasalida='" + fechasalida + '\'' +
+                ", horaentrada='" + horaentrada + '\'' +
+                '}';
     }
 }

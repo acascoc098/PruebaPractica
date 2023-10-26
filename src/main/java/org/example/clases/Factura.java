@@ -66,4 +66,16 @@ public class Factura {
     public void setCliente(Cliente cliente) {
         this.cliente = cliente;
     }
+
+    @Override
+    public String toString() {
+        return "Factura{" +
+                "numfactura=" + numfactura +
+                ", numhabitacion=" + numhabitacion +
+                ", tipohabitacion='" + tipohabitacion + '\'' +
+                ", importe=" + importe +
+                ", reserva=" + reserva +
+                ", cliente=" + cliente +
+                '}';
+    }
 }

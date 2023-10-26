@@ -1,8 +1,8 @@
 package org.example;
 
-import org.example.clases.Cliente;
-import org.example.clases.CodigoPostal;
-import org.example.clases.Direccion;
+import org.example.clases.*;
+
+import java.util.Date;
 
 public class Main {
     public static void main(String[] args) {
@@ -17,6 +17,36 @@ public class Main {
 
         Direccion dire3 = new Direccion("Plaza","e la Corredera",cod1);
         Cliente cliente3 = new Cliente("Juan","Pérez Sánchez",dire3,"mlp23@gmail.com");
+        //Probamos que ha salido bien
+        System.out.println(cliente3);
+
+        //Ahora generamos las reservas
+        Reserva reserva1 = new Reserva(123,"23/07/2023","27/07/2023","20:00");
+        Reserva reserva2 = new Reserva(98,"10/05/2023","20/05/2023","18:45");
+        Reserva reserva3 = new Reserva(133,"04/07/2023","08/07/2023","17:15");
+        Reserva reserva4 = new Reserva(245,"05/11/2023","10/11/2023","10:15");
+        Reserva reserva5 = new Reserva(33,"04/02/2023","08/02/2023","11:00");
+        Reserva reserva6 = new Reserva(150,"06/08/2023","12/08/2023","14:30");
+        Reserva reserva7 = new Reserva(115,"24/06/2023","29/06/2023","13:45");
+        Reserva reserva8 = new Reserva(169,"30/09/2023","03/10/2023","17:00");
+        Reserva reserva9 = new Reserva(220,"04/10/2023","12/10/2023","17:30");
+        Reserva reserva10 = new Reserva(134,"05/06/2023","07/06/2023","19:15");
+        //Probamos que ha salido bien
+        System.out.println(reserva4);
+
+        //Por último creamos las facturas
+        Factura factura1 = new Factura(2,20,"individual",20.00,reserva5,cliente2);
+        Factura factura2 = new Factura(33,9,"doble",40.00,reserva2,cliente3);
+        Factura factura3 = new Factura(67,330,"suite",100.00,reserva4,cliente2);
+        Factura factura4 = new Factura(8,22,"doble",20.00,reserva8,cliente3);
+        Factura factura5 = new Factura(234,25,"individual",20.00,reserva3,cliente1);
+        Factura factura6 = new Factura(66,206,"individual",20.00,reserva7,cliente2);
+        Factura factura7 = new Factura(223,17,"individual",20.00,reserva9,cliente1);
+        Factura factura8 = new Factura(156,24,"doble",20.00,reserva10,cliente3);
+        Factura factura9 = new Factura(20,53,"individual",20.00,reserva1,cliente1);
+        Factura factura10 = new Factura(12,25,"suite",100.00,reserva6,cliente2);
+        //Probamos que ha salido bien
+        System.out.println(factura4);
 
     }
 }

@@ -34,4 +34,13 @@ public class Direccion {
     public void setCodpos(CodigoPostal codpos) {
         this.codpos = codpos;
     }
+
+    @Override
+    public String toString() {
+        return "Direccion{" +
+                "tipovia='" + tipovia + '\'' +
+                ", denominacion='" + denominacion + '\'' +
+                ", codpos=" + codpos +
+                '}';
+    }
 }
