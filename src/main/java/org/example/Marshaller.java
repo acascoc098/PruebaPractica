@@ -16,6 +16,7 @@ import org.example.clases.Reserva;
 import org.example.clases.Reservas;
 
 public class Marshaller {
+    private static final long serialVersionUID = 6529685098267757690L;
     public static void main(String[] args){
         Reservas res = new Reservas();
 
@@ -25,7 +26,7 @@ public class Marshaller {
 
         } catch (IOException | ClassNotFoundException e) {
             System.err.println("Error al deserializar: " + e.getMessage());
-            e.printStackTrace();
+           // e.printStackTrace();
         }
 
         JAXBContext jContext;

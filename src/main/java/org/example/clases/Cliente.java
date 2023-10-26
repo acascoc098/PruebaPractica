@@ -10,7 +10,7 @@ import javax.xml.bind.annotation.XmlRootElement;
  * @author acascoc098 Andrea Castilla Cocera
  */
 
- @XmlRootElement(name = "cliente")
+@XmlRootElement(name = "cliente")
 @XmlAccessorType (XmlAccessType.FIELD)
 public class Cliente implements Serializable {
     private String nombre;
