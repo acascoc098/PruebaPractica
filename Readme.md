@@ -134,7 +134,7 @@ public class Unmarshaller {
 }
 ```
 
-Además, en la clase Main tenemos un método para serializar:
+Además, en la clase Main tenemos un método para serializar las reservas:
 
 ```java
 private static void serializaReservas(String archivo, Reservas reser){
