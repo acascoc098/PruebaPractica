@@ -1,5 +1,10 @@
 package org.example.clases;
 import java.io.*;
+
+/**
+ * Clase Cliente
+ * @author acascoc098 Andrea Castilla Cocera
+ */
 public class Cliente {
     private String nombre;
     private String apellidos;

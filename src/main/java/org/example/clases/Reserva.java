@@ -5,7 +5,10 @@ import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlRootElement;
 import javax.xml.bind.annotation.XmlElement;
 
-
+/**
+ * Clase Reserva
+ * @author acascoc098 Andrea Castilla
+ */
 @XmlRootElement(name = "reserva")
 @XmlAccessorType (XmlAccessType.FIELD)
 public class Reserva {

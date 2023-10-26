@@ -51,7 +51,8 @@ public class Main {
         reservas.add(reserva10);
 
         //Serializamos las reservas con el método que hemos implementado
-        serializaReservas("reservas.dat",reservas);
+        Reservas reser = new Reservas(reservas);
+        serializaReservas("reservas.dat",reser);
 
         //Por último creamos las facturas
         Factura factura1 = new Factura(2,20,"individual",20.00,reserva5,cliente2);
@@ -69,13 +70,12 @@ public class Main {
 
     }
 
-    private static void serializaReservas(String archivo, List<Reserva> listareservas){
+    private static void serializaReservas(String archivo, Reservas reser){
         try (ObjectOutputStream ops = new ObjectOutputStream(new FileOutputStream(archivo))){
-            ops.writeObject(listareservas);
+            ops.writeObject(reser);
             System.out.println("Se han serializado las reservas en el archivo " + archivo);
         } catch (IOException e) {
             System.err.println("Error al serializar los datos: " + e.getMessage());
-            e.printStackTrace();
         }
     }
 

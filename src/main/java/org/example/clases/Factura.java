@@ -1,5 +1,9 @@
 package org.example.clases;
 
+/**
+ * Clase Factura
+ * @author acascoc098 Andrea Castilla Cocera
+ */
 public class Factura {
     private int numfactura;
     private int numhabitacion;

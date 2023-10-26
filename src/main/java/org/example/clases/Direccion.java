@@ -1,5 +1,9 @@
 package org.example.clases;
 
+/**
+ * Clase Direccion
+ * @author acascoc098 Andrea Castilla Cocera
+ */
 public class Direccion {
     private String tipovia;
     private String denominacion;

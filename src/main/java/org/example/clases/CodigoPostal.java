@@ -1,5 +1,9 @@
 package org.example.clases;
 
+/**
+ * Clase del Código Postal
+ * @author acascoc098 Andrea Castilla Cocera
+ */
 public class CodigoPostal {
     private int codigo;
     private String ciudad;
