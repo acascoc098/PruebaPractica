@@ -2,21 +2,12 @@ package org.example;
 
 import org.example.clases.*;
 
-import java.io.File;
-import java.io.FileInputStream;
+import java.io.*;
 import java.io.FileOutputStream;
 import java.io.IOException;
-import java.io.NotSerializableException;
-import java.io.ObjectInputStream;
 import java.io.ObjectOutputStream;
 import java.util.ArrayList;
-import java.util.Date;
 import java.util.List;
-
-import javax.xml.bind.JAXBContext;
-import javax.xml.bind.JAXBException;
-import javax.xml.bind.Marshaller;
-import javax.xml.bind.Unmarshaller;
 
 public class Main {
     public static void main(String[] args) {
@@ -61,10 +52,6 @@ public class Main {
 
         //Serializamos las reservas con el método que hemos implementado
         serializaReservas("reservas.dat",reservas);
-        //Marshalling a las reservas
-        marshaller("reservas.dat");
-        //UnMarshalling a las reservas
-        unMarshaller("reservas.xml");
 
         //Por último creamos las facturas
         Factura factura1 = new Factura(2,20,"individual",20.00,reserva5,cliente2);
@@ -88,43 +75,8 @@ public class Main {
             System.out.println("Se han serializado las reservas en el archivo " + archivo);
         } catch (IOException e) {
             System.err.println("Error al serializar los datos: " + e.getMessage());
+            e.printStackTrace();
         }
     }
 
-    private static void marshaller(String archivo){
-        List<Reserva> lisrese = new ArrayList<>();
-
-        //Deserializamos las reservas para que sea más fácil
-        try (ObjectInputStream ips = new ObjectInputStream(new FileInputStream(archivo))){
-            lisrese = (List<Reserva>) ips.readObject();
-        } catch (IOException | ClassNotFoundException e) {
-            System.err.println("Error al deserializar: " + e.getMessage());
-        }
-
-        JAXBContext jContext;
-
-        try {
-            jContext = JAXBContext.newInstance(lisrese.getClass());
-            Marshaller jMarshaller = jContext.createMarshaller();
-            jMarshaller.setProperty(jMarshaller.JAXB_FORMATTED_OUTPUT,true);
-            jMarshaller.marshal(lisrese, new File("reservas.xml"));
-        } catch (JAXBException e) {
-            System.err.println("Error al crear el mashall, némro de error: " + e.getErrorCode());
-        }
-    }
-
-    private static void unMarshaller(String archivoxml){
-        List<Reserva> rList = new ArrayList<>();
-        JAXBContext uJaxbContext;
-
-        try {
-            uJaxbContext = JAXBContext.newInstance(rList.getClass());
-            Unmarshaller jUnmarshaller = uJaxbContext.createUnmarshaller();
-            Object object = jUnmarshaller.unmarshal(new File(archivoxml));
-            rList = (List<Reserva>) object;
-            System.out.println();
-        } catch (JAXBException e) {
-            System.err.println("Error al hacer unmarshalling: " + e.getMessage());
-        }
-    }
 }
