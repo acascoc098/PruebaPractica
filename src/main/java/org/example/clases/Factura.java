@@ -1,9 +1,14 @@
 package org.example.clases;
 
+import javax.xml.bind.annotation.XmlAccessType;
+import javax.xml.bind.annotation.XmlAccessorType;
+import javax.xml.bind.annotation.XmlRootElement;
+
 /**
  * Clase Factura
  * @author acascoc098 Andrea Castilla Cocera
  */
+
 public class Factura {
     private int numfactura;
     private int numhabitacion;

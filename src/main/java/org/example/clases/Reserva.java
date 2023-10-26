@@ -21,6 +21,9 @@ public class Reserva implements Serializable{
     private String horaentrada;
     private Cliente cliente;
 
+    public Reserva() {
+    }
+
     public Reserva(int numreserva, String fechaentrada, String fechasalida, String horaentrada, Cliente cliente) {
         this.numreserva = numreserva;
         this.fechaentrada = fechaentrada;

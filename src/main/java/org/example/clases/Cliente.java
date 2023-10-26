@@ -1,15 +1,25 @@
 package org.example.clases;
 import java.io.*;
 
+import javax.xml.bind.annotation.XmlAccessType;
+import javax.xml.bind.annotation.XmlAccessorType;
+import javax.xml.bind.annotation.XmlRootElement;
+
 /**
  * Clase Cliente
  * @author acascoc098 Andrea Castilla Cocera
  */
+
+ @XmlRootElement(name = "cliente")
+@XmlAccessorType (XmlAccessType.FIELD)
 public class Cliente implements Serializable {
     private String nombre;
     private String apellidos;
     private Direccion direccion;
     private String email;
+
+    public Cliente() {
+    }
 
     public Cliente(String nombre, String apellidos,
                    Direccion direccion, String email) {

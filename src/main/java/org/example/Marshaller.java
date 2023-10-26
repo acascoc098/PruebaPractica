@@ -9,40 +9,35 @@ import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
 
+import javax.xml.*;
 import javax.xml.bind.JAXBContext;
 import javax.xml.bind.JAXBException;
 import org.example.clases.Reserva;
+import org.example.clases.Reservas;
 
 public class Marshaller {
-    private Object JAXB_FORMATTED_OUTPUT;
-
     public static void main(String[] args){
-        List<Reserva> lisrese = new ArrayList<>();
+        Reservas res = new Reservas();
 
         //Deserializamos las reservas para que sea más fácil
         try (ObjectInputStream ips = new ObjectInputStream(new FileInputStream("reservas.dat"))){
-            while (true) {
-                try{
-                    Reserva reser = (Reserva) ips.readObject();
-                    lisrese.add(reser);
-                }catch(EOFException e){
-                    System.err.println("Error al leer las reservas: " + e.getMessage());
-                }
-            }
+            Reservas re = (Reservas) ips.readObject();
 
         } catch (IOException | ClassNotFoundException e) {
             System.err.println("Error al deserializar: " + e.getMessage());
+            e.printStackTrace();
         }
 
         JAXBContext jContext;
 
         try {
-            jContext = JAXBContext.newInstance(lisrese.getClass());
+            jContext = JAXBContext.newInstance(res.getClass());
             javax.xml.bind.Marshaller jMarshaller = jContext.createMarshaller();
             jMarshaller.setProperty(jMarshaller.JAXB_FORMATTED_OUTPUT,true);
-            jMarshaller.marshal(lisrese, new File("reservas.xml"));
+            jMarshaller.marshal(res, new File("reservas.xml"));
         } catch (JAXBException e) {
             System.err.println("Error al crear el mashall, número de error: " + e.getErrorCode());
+            e.printStackTrace();
         }
     }
 }
