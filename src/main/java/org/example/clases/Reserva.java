@@ -1,20 +1,27 @@
 package org.example.clases;
 
-import java.sql.Time;
-import java.util.Date;
+import javax.xml.bind.annotation.XmlAccessType;
+import javax.xml.bind.annotation.XmlAccessorType;
+import javax.xml.bind.annotation.XmlRootElement;
+import javax.xml.bind.annotation.XmlElement;
 
+
+@XmlRootElement(name = "reserva")
+@XmlAccessorType (XmlAccessType.FIELD)
 public class Reserva {
+
     private int numreserva;
     private String fechaentrada;
     private String fechasalida;
     private String horaentrada;
+    private Cliente cliente;
 
-    public Reserva(int numreserva, String fechaentrada,
-                   String fechasalida, String horaentrada) {
+    public Reserva(int numreserva, String fechaentrada, String fechasalida, String horaentrada, Cliente cliente) {
         this.numreserva = numreserva;
         this.fechaentrada = fechaentrada;
         this.fechasalida = fechasalida;
         this.horaentrada = horaentrada;
+        this.cliente = cliente;
     }
 
     public int getNumreserva() {
@@ -49,6 +56,14 @@ public class Reserva {
         this.horaentrada = horaentrada;
     }
 
+    public Cliente getCliente() {
+        return cliente;
+    }
+
+    public void setCliente(Cliente cliente) {
+        this.cliente = cliente;
+    }
+
     @Override
     public String toString() {
         return "Reserva{" +
@@ -56,6 +71,7 @@ public class Reserva {
                 ", fechaentrada='" + fechaentrada + '\'' +
                 ", fechasalida='" + fechasalida + '\'' +
                 ", horaentrada='" + horaentrada + '\'' +
+                ", cliente=" + cliente +
                 '}';
     }
 }
